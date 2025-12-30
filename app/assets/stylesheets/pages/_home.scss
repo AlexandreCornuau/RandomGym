@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.home-container {
+  padding: 20px;
+
+    .etirement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+    background-size: contain;      // image entière, jamais coupée
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    a{
+      text-decoration: none;
+    }
+
+  }
+
+
+
+
+}

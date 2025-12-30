@@ -5,7 +5,10 @@ class TrainingsController < ApplicationController
 
   def show
     @training = Training.find(params[:id])
-    @exercices = Exercice.all.sample(3)
+    @training_exercices = Training_exercices.new
+    @exercices = Exercice.all.sample(6)
+    
+
   end
 
   def create

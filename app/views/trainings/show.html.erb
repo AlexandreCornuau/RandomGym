@@ -1,10 +1,15 @@
-<h1>ici on va mettre des exercices
-</h1>
+<div class="container-show">
+<%= @training.created_at.hour %>
+<h2><%=@training.date.day%>/<%= @training.date.month %></h2>
+  <div class= "exercice">
 
-<% @exercices.each do |exercice| %>
-  <%= exercice.name %>
-<% end %>
-<h2>
+  <% @exercices.each do |exercice| %>
+    <div class="exercice-name">
+      <%= exercice.name %>
+      <%= exercice.description %>
+      <%= exercice.image %>
+    </div>
+  <% end %>
 
-<%= @training.date %>
-</h2>
+  </div>
+</div>

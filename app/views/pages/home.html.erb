@@ -1,6 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= link_to trainings_path, data: { turbo_method: :post } do %>
-  <%= "on s'entraine" %>
-  <% end %>
+<div class= "home-container">
+  <div class= "etirement" style="background-image: url('https://tonigo.fr/img/cms/Posture-du-cobra.jpg')">
+    <%= link_to trainings_path, data: { turbo_method: :post } do %>
+      <%= "on s'étire" %>
+    <% end %>
+  </div>
+</div>
