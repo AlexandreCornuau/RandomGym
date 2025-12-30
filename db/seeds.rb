@@ -10,8 +10,11 @@
 puts "Destruction des exercices"
 Exercice.destroy_all
 puts "creation des exercices"
-Exercice.create(name: "etirez les jambe")
-puts "super exo"
-puts "creation d'un entrainement"
-Training.create(date:Date.today)
+
+30.times do
+  Exercice.create(name: Faker::Sport.sport, description: Faker::Book.publisher, image: Faker::Games::Heroes.name )
+end
+
+puts "destruction des trainings"
+Training.destroy_all
 puts"done"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_12_29_133436) do
+ActiveRecord::Schema[7.1].define(version: 2025_12_29_212353) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,13 +22,20 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_29_133436) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "trainings", force: :cascade do |t|
-    t.datetime "date"
-    t.bigint "user_id", null: false
+  create_table "training_exercices", force: :cascade do |t|
+    t.bigint "training_id", null: false
     t.bigint "exercice_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["exercice_id"], name: "index_trainings_on_exercice_id"
+    t.index ["exercice_id"], name: "index_training_exercices_on_exercice_id"
+    t.index ["training_id"], name: "index_training_exercices_on_training_id"
+  end
+
+  create_table "trainings", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_trainings_on_user_id"
   end
 
@@ -44,6 +51,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_29_133436) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "trainings", "exercices"
+  add_foreign_key "training_exercices", "exercices"
+  add_foreign_key "training_exercices", "trainings"
   add_foreign_key "trainings", "users"
 end
