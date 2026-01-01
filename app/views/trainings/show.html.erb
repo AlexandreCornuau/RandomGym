@@ -4,10 +4,12 @@
   <div class= "exercice">
 
   <% @exercices.each do |exercice| %>
-    <div class="exercice-name">
+    <div class="exercice-card">
       <%= exercice.name %>
-      <%= exercice.description %>
-      <%= exercice.image %>
+
+      <div class="picture">
+        <%= image_tag exercice.image %>
+      </div>
     </div>
   <% end %>
 

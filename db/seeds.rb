@@ -7,12 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Destruction des training_exercices"
+TrainingExercice.destroy_all
+
 puts "Destruction des exercices"
 Exercice.destroy_all
 puts "creation des exercices"
 
-30.times do
-  Exercice.create(name: Faker::Sport.sport, description: Faker::Book.publisher, image: Faker::Games::Heroes.name )
+
+i = 1
+while i < 36 do
+  is = i.to_s
+  Exercice.create(name: is, description: Faker::Book.publisher, image: "#{is}.png")
+   puts "Exercice #{i} créé" 
+  i += 1
 end
 
 puts "destruction des trainings"
