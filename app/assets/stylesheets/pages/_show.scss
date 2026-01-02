@@ -1,5 +1,6 @@
 .container-show {
   padding: 20px;
+
   .exercice {
     display: flex;
     flex-direction: column;
@@ -15,9 +16,10 @@
     align-items: center;
     border-radius: 20px;
 
+
     .picture {
     display: flex;
-    max-height: 580px;
+    max-height: 678px;
     min-height: 400px;
     align-items: center;
 
@@ -34,3 +36,6 @@
   }
 
 }
+.exercice-card.hidden {
+  display: none;
+} 

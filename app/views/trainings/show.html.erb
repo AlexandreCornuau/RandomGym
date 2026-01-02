@@ -1,13 +1,13 @@
-<div class="container-show">
+<div class="container-show" data-controller="visibility">
 <%= @training.created_at.hour %>
 <h2><%=@training.date.day%>/<%= @training.date.month %></h2>
   <div class= "exercice">
 
   <% @exercices.each do |exercice| %>
-    <div class="exercice-card">
+    <div class="exercice-card hidden" data-visibility-target="image" >
       <%= exercice.name %>
 
-      <div class="picture">
+      <div class="picture"  >
         <%= image_tag exercice.image %>
       </div>
     </div>
