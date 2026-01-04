@@ -12,12 +12,16 @@
 
     def create
       @training = Training.new(date: Date.today, user: current_user)
-      last_training = current_user.trainings.last
+      cycle_length = 5
+      position_in_cycle = current_user.trainings.count % cycle_length
       last_name_exercices = []
-      if last_training
-        last_exercices = last_training.exercices
-        last_exercices.each do |exercice|
-          last_name_exercices << exercice.name
+
+      if position_in_cycle > 0
+        last_trainings = current_user.trainings.last(position_in_cycle)
+        last_trainings.each do |training|
+          training.exercices.each do |exercice|
+            last_name_exercices << exercice.name
+          end
         end
       end
 
@@ -25,20 +29,16 @@
         exercices_all = Exercice.all
         exercice_training_today = exercices_all.reject do |exercice|
           last_name_exercices.include?(exercice.name)
-         end
+        end
 
-        exercice_training_today.sample(6).each do |exercice|
+        exercice_training_today.sample(7).each do |exercice|
           TrainingExercice.create(training: @training, exercice: exercice)
         end
-      redirect_to training_path(@training), status: :see_other
+        redirect_to training_path(@training), status: :see_other
 
       else
-
         render :new, status: :unprocessable_content
       end
-
-
-
     end
 
 
