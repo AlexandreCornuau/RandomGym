@@ -5,10 +5,11 @@
 
   <% @exercices.each do |exercice| %>
     <div class="exercice-card hidden" data-visibility-target="image" >
-      <%= exercice.name %>
+      <div class="card-content">
 
-      <div class="picture"  >
-        <%= image_tag exercice.image %>
+        <div class="picture">
+          <%= image_tag exercice.image %>
+        </div>
       </div>
     </div>
   <% end %>

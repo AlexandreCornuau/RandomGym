@@ -1,27 +1,25 @@
-// Specific CSS for your home-page
 .home-container {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
 
-    .etirement {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    width: 100%;
-    background-size: contain;      // image entière, jamais coupée
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    background-color: white;
+  .btn-etirement {
+    background-color: #292929;
+    color: #a2ff30;
+    padding: 20px 40px;
     border-radius: 10px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    a{
-      text-decoration: none;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid #a2ff30;
+    box-shadow: 0 0 15px #a2ff30;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #a2ff30;
     }
-
   }
-
-
-
-
 }
