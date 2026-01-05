@@ -9,7 +9,7 @@ export default class extends Controller {
 
     setInterval(() => {
       this.rotation();
-    }, 9000);
+    }, 120000);
   }
 
   rotation() {

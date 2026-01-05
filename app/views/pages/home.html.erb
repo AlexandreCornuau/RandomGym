@@ -1,7 +1,5 @@
-<div class= "home-container">
-  <div class= "etirement" style="background-image: url('https://tonigo.fr/img/cms/Posture-du-cobra.jpg')">
-    <%= link_to trainings_path, data: { turbo_method: :post } do %>
-      <%= "on s'étire" %>
-    <% end %>
-  </div>
+<div class="home-container">
+  <%= link_to trainings_path, class: "btn-etirement", data: { turbo_method: :post } do %>
+    Go
+  <% end %>
 </div>
