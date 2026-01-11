@@ -5,5 +5,4 @@
 //= link popper.js
 //= link bootstrap.min.js
 
-//= link manifest.json.erb
-
+//= link manifest.json
