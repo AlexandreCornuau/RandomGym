@@ -7,6 +7,14 @@
   .container-show {
     padding: 20px;
 
+    p{
+      color: #a5ff30;
+      font-family: "Alfa Slab One", serif;
+      font-weight: 300;
+      font-style: normal;
+      text-align: center;
+    }
+
     .exercice {
       display: flex;
       flex-direction: column;
