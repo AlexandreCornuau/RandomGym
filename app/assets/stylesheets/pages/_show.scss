@@ -8,12 +8,33 @@
     padding: 20px;
 
     p{
-      color: #a5ff30e8;
+      color: #a5ff30dc;
       font-family: "Alfa Slab One", serif;
       font-weight: 300;
       font-style: normal;
       text-align: center;
       letter-spacing: 0.5px;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+      gap: 50px;
+
+      button {
+
+        color: #c1ff30e8;
+        font-family: "Alfa Slab One", serif;
+        font-weight: 300;
+        font-style: normal;
+        letter-spacing: 0.5px;
+        padding: 5px 20px;
+        border: 1px solid #c1ff30e8;
+        border-radius: 10px;
+        background-color: transparent;
+
+      }
     }
 
     .exercice {
@@ -90,5 +111,3 @@
     background-color: #000000;
     color: #ffffff;
   }
-
- 
