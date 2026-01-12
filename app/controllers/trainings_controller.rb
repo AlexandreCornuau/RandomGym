@@ -6,6 +6,8 @@
     def show
       @training = Training.find(params[:id])
       @exercices =  @training.exercices
+      cycle_length = 5
+      @position_in_cycle = (current_user.trainings.count % cycle_length) + 1
 
 
     end

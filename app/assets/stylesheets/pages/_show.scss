@@ -7,6 +7,15 @@
   .container-show {
     padding: 20px;
 
+    p{
+      color: #a5ff30e8;
+      font-family: "Alfa Slab One", serif;
+      font-weight: 300;
+      font-style: normal;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
     .exercice {
       display: flex;
       flex-direction: column;
@@ -29,11 +38,11 @@
       &::before {
         content: '';
         position: absolute;
-        top: -8px;
-        left: -8px;
-        right: -8px;
-        bottom: -8px;
-        border-radius: 28px;
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+        border-radius: 26px;
         --angle: 0deg;
         background: conic-gradient(#a2ff30 var(--angle), transparent var(--angle));
         z-index: -1;
@@ -81,3 +90,5 @@
     background-color: #000000;
     color: #ffffff;
   }
+
+ 
