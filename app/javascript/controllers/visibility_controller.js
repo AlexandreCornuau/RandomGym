@@ -6,10 +6,12 @@ export default class extends Controller {
   connect() {
     this.index = 0
     this.imageTargets[this.index].classList.remove("hidden")
+    this.startTimer();
+  }
 
-    setInterval(() => {
-      this.rotation();
-    }, 120000);
+  startTimer() {
+    this.interval_Exercice = setInterval(() => {this.rotation()}, 120000);
+
   }
 
   rotation() {
@@ -19,7 +21,16 @@ export default class extends Controller {
       } else {
       this.index = 0
       }
-    this.imageTargets[this.index].classList.remove("hidden")
+      this.imageTargets[this.index].classList.remove("hidden")
 
-  }
+    }
+
+    next() {
+      clearInterval(this.interval_Exercice);
+      this.rotation();
+      this.startTimer();
+
+    }
+
+
 }
