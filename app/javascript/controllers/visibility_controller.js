@@ -7,9 +7,7 @@ export default class extends Controller {
     this.index = 0
     this.imageTargets[this.index].classList.remove("hidden")
 
-    setInterval(() => {
-      this.rotation();
-    }, 120000);
+    this.interval_Exercice = setInterval(() => {this.rotation()}, 12<0);
   }
 
   rotation() {
@@ -19,7 +17,21 @@ export default class extends Controller {
       } else {
       this.index = 0
       }
+    clearInterval(this.interval_Exercice);
+    this.interval_Exercice;
     this.imageTargets[this.index].classList.remove("hidden")
 
   }
+
+
 }
+
+
+// const intervalID = setInterval(myCallback, 500, "Parameter 1", "Parameter 2");
+
+// function myCallback(a, b) {
+//   // Your code here
+//   // Parameters are purely optional.
+//   console.log(a);
+//   console.log(b);
+// }

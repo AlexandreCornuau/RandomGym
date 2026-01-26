@@ -1,12 +1,12 @@
 <div class="container-show" data-controller="visibility">
   <div class="navigation">
-    <p> scéance <%= @position_in_cycle%>/5 </p>
-    <button data-action= "click->visibility#rotation">
+    <p> scéance <%= @position_in_cycle %>/5 </p>
+    <button data-action="click->visibility#rotation">
       next
     </button>
   </div>
 
-  <div class= "exercice">
+  <div class="exercice">
 
   <% @exercices.each do |exercice| %>
     <div class="exercice-card hidden" data-visibility-target="image" >
