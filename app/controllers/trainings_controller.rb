@@ -45,10 +45,3 @@
 
 
   end
-
-
-  # if @training.save
-  #       Exercice.all.sample(6).each do |exercice|
-  #         TrainingExercice.create(training: @training, exercice: exercice)
-  #       end
-  #     redirect_to training_path(@training), status: :see_other
