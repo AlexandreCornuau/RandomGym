@@ -38,6 +38,11 @@ export default class extends Controller {
       confirmButtonColor: 'rgb(113, 190, 19)',
       background: '#3e3e3e',
       color: '#ffffff',
+    }).then(() => {
+      const emailField = document.getElementById('user_email');
+      if (emailField) {
+        emailField.focus();
+      }
     });
   }
 
