@@ -55,22 +55,38 @@ export default class extends Controller {
   }
 
   updateSvg() {
-  // récupérer les dimensions de la card
-  const elem =  this.imageTargets[this.index];
-  //récupérer l'element Svg
-  const container = this.rectTargets[this.index];
-  // donner les dimension de la card au svg
-  const rect = elem.getBoundingClientRect();
-  console.log(elem);
-  console.log(rect.height);
-  container.setAttribute("width", rect.width);
-  container.setAttribute("height", rect.height);
+    const elem = this.imageTargets[this.index];
+    const container = this.rectTargets[this.index];
+    const rect = elem.getBoundingClientRect();
 
-  const perimeter = 2 * (rect.width + rect.height);
-  container.style.strokeDasharray = perimeter;
-  container.style.strokeDashoffset = perimeter;
+    const w = rect.width;
+    const h = rect.height;
+    const r = 35; // rayon augmenté pour compenser l'effet visuel du squircle
 
-}
+    // Squircle : la courbe commence plus tôt pour une transition douce
+    // Coefficients augmentés pour plus de smoothing
+    const p = r * 1.5;
+    const l = r * 0.55;
+
+    const d = `
+      M ${p},0
+      L ${w - p},0
+      C ${w - l},0 ${w},${l} ${w},${p}
+      L ${w},${h - p}
+      C ${w},${h - l} ${w - l},${h} ${w - p},${h}
+      L ${p},${h}
+      C ${l},${h} 0,${h - l} 0,${h - p}
+      L 0,${p}
+      C 0,${l} ${l},0 ${p},0
+      Z
+    `;
+
+    container.setAttribute("d", d);
+
+    const perimeter = 2 * (w + h);
+    container.style.strokeDasharray = perimeter;
+    container.style.strokeDashoffset = perimeter;
+  }
 
 
 
