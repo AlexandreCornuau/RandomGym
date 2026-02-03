@@ -1,9 +1,13 @@
   <div class="container-show" data-controller="visibility">
   <div class="navigation">
+     <button data-action="click->visibility#prev">
+      prev
+    </button>
     <p> scéance <%= @position_in_cycle %>/5 </p>
     <button data-action="click->visibility#next">
       next
     </button>
+
   </div>
 
   <div class="exercice">
