@@ -65,11 +65,11 @@ export default class extends Controller {
 
     // Squircle : la courbe commence plus tôt pour une transition douce
     // Coefficients augmentés pour plus de smoothing
-    const p = r * 1.5;
-    const l = r * 0.55;
+    const p = r * 2;
+    const l = r * 0.2;
 
     const d = `
-      M ${p},0
+      M ${p+1},0
       L ${w - p},0
       C ${w - l},0 ${w},${l} ${w},${p}
       L ${w},${h - p}
