@@ -7,7 +7,10 @@ export default class extends Controller {
 
   static values = {
     notice: String,
+
   }
+
+
 
 
   connect() {
@@ -27,13 +30,15 @@ export default class extends Controller {
     this.imageTargets[this.index].classList.add("hidden")
     if (this.index < this.imageTargets.length - 1) {
       this.index ++
-      } else {
+    } else {
       this.index = 0
-      }
-      this.imageTargets[this.index].classList.remove("hidden")
-      this.notice()
-
     }
+    this.imageTargets[this.index].classList.remove("hidden")
+    this.notice()
+    const audio = new Audio('/beep.mp3');
+    audio.play();
+
+  }
 
     next() {
       clearInterval(this.interval_Exercice);
