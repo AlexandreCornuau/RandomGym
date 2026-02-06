@@ -99,3 +99,16 @@
     stroke-dashoffset: 0;
   }
 }
+
+  .rotate-y {
+    animation: rotateY 1s ease-in-out;
+  }
+
+  @keyframes rotateY {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
